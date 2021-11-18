@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 15px;
+  color: #fff;
+}
+
+#main__category__mobile button, h2, input, p {
+  letter-spacing: -0.25px;
+  color: #777a92;
+}
+
+h2, input {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#main__count button, h4 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  color: #4d5066;
+}
+
+#main__category__mobile button {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+a, p {
+  font-size: 12px;
+}
+
+body {
+  color: #777a92;
+  background-color: #fff;
+}
+
+#page {
+  width: 100vw;
+  min-height: 100vh;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-image: url(../IMAGE/mobile-day-background.jfif);
+}
+
+#container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header {
+  width: 90%;
+  margin: 70px 0 50px 0;
+  justify-content: space-between;
+  align-items: flex-start !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#main {
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footer {
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 -5px 5px rgba(68, 68, 68, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#switchMode_button {
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url(../IMAGE/moon_symbol.png);
+  background-size: 26px;
+}
+
+#create__todo {
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px #C2C3D680;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+#create__todo input {
+  border: none;
+  color: #4d5066;
+}
+#create__todo button {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid #C2C3D680;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#main__list {
+  width: 100%;
+  min-height: 225px;
+  margin-top: 25px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#list__todo {
+  width: 100%;
+  border-bottom: 1px solid #C2C3D680;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#list__todo input {
+  border: none;
+  color: #4d5066;
+}
+#list__todo button {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid #C2C3D680;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#main__count {
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+  box-shadow: 0px 35px 50px #C2C3D680;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#main__count button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#main__category__desktop {
+  display: none;
+}
+
+#main__category__mobile {
+  width: 100%;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  box-shadow: 0px 35px 50px #C2C3D680;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#main__category__mobile button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#main__drag {
+  width: 100%;
+  margin: 40px auto 80px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#footer img {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+}
+
+@media screen and (min-width: 580px) {
+  #page {
+    background-image: url(../IMAGE/desktop-day-background.jpg);
+  }
+
+  #header, #create__todo, #main {
+    max-width: 540px;
+  }
+
+  #main__count {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 35px 50px #C2C3D680;
+  }
+
+  #main__category__mobile {
+    display: none;
+  }
+
+  #main__category__desktop {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=toDoList.css.map */

@@ -1,0 +1,45 @@
+@import "variables";
+
+@font-face {
+  font-family: 'Josefin Sans', sans-serif;
+  src: url("../Font/JosefinSans-VariableFont_wght.ttf");
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 15px;
+  color: $exception-color;
+}
+
+h2, input {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#main__count {
+  font-size: 14px;
+  color: $secondary-color;
+  h4{
+
+  }
+  button {
+    font-weight: 400;
+  }
+  #main__category__mobile {
+    font-weight: 700;
+    color: inherit;
+  }
+}
+
+p {
+  font-size: 12px;
+  font-weight: 400;
+  color: $exception-color;
+
+  a {
+    font-weight: 600;
+    color: $hover-color;
+    text-decoration: underline;
+  }
+}

@@ -1,38 +1,12 @@
-//day mode
-$bg-color: #fff;
-$list-bg: #fff;
-$primary-color: hsl(234, 11%, 52%);
-$secondary_color: hsl(233, 14%, 35%);
-$btn-active: hsl(220, 98%, 61%);
-$border-color: 1px solid #C2C3D680;
-$box-shadow: 0px 35px 50px #C2C3D680;
-$switch-btn-bg: url(../IMAGE/moon_symbol.png);
-$primary-image: url(../IMAGE/mobile-day-background.jfif);
-$secondary-image: url(../IMAGE/desktop-day-background.jpg);
-$btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
-
-//night mode
-[data-theme="night"] {
-  $bg-color: hsl(235, 21%, 11%);
-  $list-bg: hsl(235, 24%, 19%);
-  $primary-color: hsl(233, 11%, 84%);
-  $secondary_color: hsl(235, 19%, 35%);
-  $btn-active: hsl(220, 98%, 61%);
-  $border-color: 1px solid hsl(237, 14%, 26%);
-  $box-shadow: 0px 35px 50px #00000080;
-  $switch-btn-bg: url(../IMAGE/sun.jpg);
-  $primary-image: url(../IMAGE/mobile-night-background.jfif);
-  $secondary-image: url(../IMAGE/desktop-night-background.jpg);
-  $btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-}
+@import "font";
+@import "variables";
 
 //general
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Josefin Sans",sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 @mixin flex_row_wrap {
@@ -53,77 +27,138 @@ $btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 
-//fonts
-h1 {
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 15px;
-  color: $bg-color;
-}
-
-#main__category__mobile button, h2, input, p {
-  letter-spacing: -.25px;
-  color: $primary-color;
-}
-
-h2, input {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-#main__count button, h4 {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -.25px;
-  color:$secondary_color;
-}
-
-#main__category__mobile button {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-a, p {
-  font-size: 12px;
-}
-
-
-//body           helps for mode switch
+//whole page
 body {
   color: $primary-color;
   background-color: $bg-color;
 }
 
-//whole page
 #page {
   width: 100vw;
   min-height: 100vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-image: $primary-image;
+  div{
+    max-width: 100%;
+  }
 }
 
 #container {
-  max-width: 100%;
   @include flex_column();
+  div{
+    width: 90%;
+  }
 }
 
+
+//header
 #header {
-  width: 90%;
   margin: 70px 0 50px 0;
   justify-content: space-between;
   align-items: flex-start !important;
   @include flex_row_wrap();
+  button{
+    border: none;
+    @include button();
+    img {
+      overflow: hidden;
+    }
+  }
+}
+#day{
+  display: none;
+}
+//create to do
+@mixin todo {
+  padding: 20px;
+  background-color: $list-bg;
+  input {
+    border: none;
+    background-color: inherit;
+  }
+  button {
+    margin-right: 10px;
+    border-radius: 50%;
+    border: $border-color;
+    @include button();
+  }
 }
 
+#create__todo {
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  @include flex_row_wrap();
+  @include todo();
+
+}
+
+//main
 #main {
-  width: 90%;
   justify-content: center;
+  @include flex_column();
+  div{
+    width: 100%;
+  }
+}
+
+//list of to do     //parent
+#main__list {
+  min-height: 225px;
+  margin-top: 25px;
+  list-style-type: none;
+  background-color: $list-bg;
   @include flex_column();
 }
 
-#footer {
+#list__todo {
+  border-bottom: $border-color;
+  @include todo();
+  @include flex_row_wrap();
+}
+
+#list__count {
   width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+  box-shadow: $box-shadow;
+  background-color: $list-bg;
+  @include flex_row_wrap();
+  button {
+    padding: 10px;
+    border: none;
+    @include button();
+  }
+  #list__desktop {
+    display: none;
+  }
+}
+
+#main__list__mobile {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  box-shadow: $box-shadow;
+  background-color: $bg-color;
+  @include flex_row_wrap();
+  button {
+    padding: 10px;
+    border: none;
+    @include button();
+  }
+}
+
+//drag and drop sentence
+#main__drag {
+  margin: 40px auto 80px;
+  justify-content: center;
+  @include flex_row_wrap();
+}
+
+
+//footer
+#footer {
   bottom: 0;
   padding: 10px;
   position: fixed;
@@ -132,117 +167,13 @@ body {
   background-color: $bg-color;
   box-shadow: 0 -5px 5px rgb(68 68 68 / 10%);
   @include flex_row_wrap();
-}
-
-
-//switch mode button
-#switchMode_button {
-  @include button();
-  background-image: $switch-btn-bg;
-  background-size: 26px;
-  //background-color: transparent;
-}
-
-//#switchMode_button img {
-//  width: 26px;
-//  height: 26px;
-//  background-color: transparent;
-//}
-
-
-//create to do
-@mixin todo {
-  padding: 20px;
-  background-color: $list-bg ;
-  input {
-    border: none;
-    color: $secondary_color;
+  p{
+    img {
+      margin: 0 5px;
+      overflow: hidden;
+      background-color: inherit;
+    }
   }
-  button {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    border-radius: 50%;
-    border:$border-color;
-    @include button();
-  }
-}
-
-#create__todo {
-  width: 90%;
-  border-radius: 5px;
-  box-shadow: $box-shadow;
-  @include flex_row_wrap();
-  @include todo();
-}
-
-
-//list of to do     //parent
-#main__list {
-  width: 100%;
-  min-height: 225px;
-  margin-top: 25px;
-  list-style-type: none;
-  @include flex_column();
-}
-
-#list__todo {
-  width: 100%;
-  border-bottom:$border-color;
-  @include todo();
-  @include flex_row_wrap();
-}
-
-#main__count {
-  width: 100%;
-  padding: 20px;
-  justify-content: space-between;
-  box-shadow: $box-shadow;
-  @include flex_row_wrap();
-}
-
-#main__count button {
-  padding: 10px;
-  border:none;
-  @include button();
-}
-
-#main__category__desktop {
-  display: none;
-}
-
-#main__category__mobile {
-  width: 100%;
-  margin-top: 15px;
-  padding: 20px;
-  border-radius: 5px;
-  justify-content: space-evenly;
-  box-shadow: $box-shadow;
-  background-color: $bg-color;
-  @include flex_row_wrap();
-}
-
-#main__category__mobile button {
-  padding: 10px;
-  border:none;
-  @include button();
-}
-
-
-//drag and drop sentence
-#main__drag {
-  width: 100%;
-  margin: 40px auto 80px;
-  justify-content: center;
-  @include flex_row_wrap();
-}
-
-
-//footer
-#footer img {
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
 }
 
 
@@ -252,21 +183,22 @@ body {
     background-image: $secondary-image;
   }
 
-  #header, #create__todo, #main {
-    max-width: 540px;
+  #container{
+    div{
+      max-width: 540px;
+    }
   }
 
-  #main__count {
+  #list__count {
     width: 100%;
     padding: 20px;
     box-shadow: $box-shadow;
+    #list__desktop {
+      display: block;
+    }
   }
-
-  #main__category__mobile {
+  #main__list__mobile {
     display: none;
   }
 
-  #main__category__desktop {
-    display: block;
-  }
 }

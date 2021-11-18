@@ -1,20 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
   font-family: "Josefin Sans", sans-serif;
+  src: url("../Font/JosefinSans-VariableFont_wght.ttf");
 }
-
 h1 {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 15px;
   color: #fff;
-}
-
-#main__category__mobile button, h2, input, p {
-  letter-spacing: -0.25px;
-  color: #777a92;
 }
 
 h2, input {
@@ -22,25 +14,39 @@ h2, input {
   font-weight: 400;
 }
 
-#main__count button, h4 {
+#main__count {
   font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.25px;
   color: #4d5066;
 }
-
-#main__category__mobile button {
-  font-size: 14px;
+#main__count button {
+  font-weight: 400;
+}
+#main__count #main__category__mobile {
   font-weight: 700;
+  color: inherit;
 }
 
-a, p {
+p {
   font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+}
+p a {
+  font-weight: 600;
+  color: #3a7bfd;
+  text-decoration: underline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 body {
   color: #777a92;
-  background-color: #fff;
+  background-color: #161722;
 }
 
 #page {
@@ -48,18 +54,22 @@ body {
   min-height: 100vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-image: url(../IMAGE/mobile-day-background.jfif);
+  background-image: url(../IMAGE/mobile-night-background.jpg);
+}
+#page div {
+  max-width: 100%;
 }
 
 #container {
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+#container div {
+  width: 90%;
+}
 
 #header {
-  width: 90%;
   margin: 70px 0 50px 0;
   justify-content: space-between;
   align-items: flex-start !important;
@@ -67,128 +77,112 @@ body {
   flex-direction: row;
   align-items: center;
 }
+#header button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+#header button img {
+  overflow: hidden;
+}
+
+#day {
+  display: none;
+}
+
+#create__todo {
+  border-radius: 5px;
+  box-shadow: 0px 35px 50px #00000080;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  background-color: #25273c;
+}
+#create__todo input {
+  border: none;
+  background-color: inherit;
+}
+#create__todo button {
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid #393a4c;
+  cursor: pointer;
+  background-color: transparent;
+}
 
 #main {
-  width: 90%;
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-#footer {
+#main div {
   width: 100%;
-  bottom: 0;
-  padding: 10px;
-  position: fixed;
-  text-align: center;
-  justify-content: center;
-  background-color: #fff;
-  box-shadow: 0 -5px 5px rgba(68, 68, 68, 0.1);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#switchMode_button {
-  cursor: pointer;
-  background-color: transparent;
-  background-image: url(../IMAGE/moon_symbol.png);
-  background-size: 26px;
-}
-
-#create__todo {
-  width: 90%;
-  border-radius: 5px;
-  box-shadow: 0px 35px 50px #C2C3D680;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
-}
-#create__todo input {
-  border: none;
-  color: #4d5066;
-}
-#create__todo button {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  border-radius: 50%;
-  border: 1px solid #C2C3D680;
-  cursor: pointer;
-  background-color: transparent;
 }
 
 #main__list {
-  width: 100%;
   min-height: 225px;
   margin-top: 25px;
   list-style-type: none;
+  background-color: #25273c;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #list__todo {
-  width: 100%;
-  border-bottom: 1px solid #C2C3D680;
+  border-bottom: 1px solid #393a4c;
   padding: 20px;
-  background-color: #fff;
+  background-color: #25273c;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 #list__todo input {
   border: none;
-  color: #4d5066;
+  background-color: inherit;
 }
 #list__todo button {
-  width: 24px;
-  height: 24px;
   margin-right: 10px;
   border-radius: 50%;
-  border: 1px solid #C2C3D680;
+  border: 1px solid #393a4c;
   cursor: pointer;
   background-color: transparent;
 }
 
-#main__count {
+#list__count {
   width: 100%;
   padding: 20px;
   justify-content: space-between;
-  box-shadow: 0px 35px 50px #C2C3D680;
+  box-shadow: 0px 35px 50px #00000080;
+  background-color: #25273c;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
-#main__count button {
+#list__count button {
   padding: 10px;
   border: none;
   cursor: pointer;
   background-color: transparent;
 }
-
-#main__category__desktop {
+#list__count #list__desktop {
   display: none;
 }
 
-#main__category__mobile {
-  width: 100%;
+#main__list__mobile {
   margin-top: 15px;
   padding: 20px;
   border-radius: 5px;
   justify-content: space-evenly;
-  box-shadow: 0px 35px 50px #C2C3D680;
-  background-color: #fff;
+  box-shadow: 0px 35px 50px #00000080;
+  background-color: #161722;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
-#main__category__mobile button {
+#main__list__mobile button {
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -196,7 +190,6 @@ body {
 }
 
 #main__drag {
-  width: 100%;
   margin: 40px auto 80px;
   justify-content: center;
   display: flex;
@@ -204,33 +197,44 @@ body {
   align-items: center;
 }
 
-#footer img {
-  width: 12px;
-  height: 12px;
+#footer {
+  bottom: 0;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  justify-content: center;
+  background-color: #161722;
+  box-shadow: 0 -5px 5px rgba(68, 68, 68, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#footer p img {
   margin: 0 5px;
+  overflow: hidden;
+  background-color: inherit;
 }
 
 @media screen and (min-width: 580px) {
   #page {
-    background-image: url(../IMAGE/desktop-day-background.jpg);
+    background-image: url(../IMAGE/desktop-night-background.jpg);
   }
 
-  #header, #create__todo, #main {
+  #container div {
     max-width: 540px;
   }
 
-  #main__count {
+  #list__count {
     width: 100%;
     padding: 20px;
-    box-shadow: 0px 35px 50px #C2C3D680;
+    box-shadow: 0px 35px 50px #00000080;
   }
-
-  #main__category__mobile {
-    display: none;
-  }
-
-  #main__category__desktop {
+  #list__count #list__desktop {
     display: block;
+  }
+
+  #main__list__mobile {
+    display: none;
   }
 }
 

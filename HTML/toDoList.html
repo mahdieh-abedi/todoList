@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>TO DO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../STYLE/toDoList.css">
+    <title>Todo App</title>
 </head>
 <body>
 <div id="page">
     <div id="container">
         <div id="header">
             <h1>TODO</h1>
-            <button id="switchMode_button">
-<!--                <img src="../IMAGE/moon_symbol.png" alt="moon"/>-->
+            <button>
+                <img id="night" src="../IMAGE/icon-moon.jpg" alt="night"/>
+                <img id="day" src="../IMAGE/icon-sun.jpg" alt="day"/>
             </button>
         </div>
-        <form id="create__todo">
+        <div id="create__todo">
             <button id="todo__btn"></button>
             <label for="todo__input">
                 <input id="todo__input" type="text" placeholder="Create a new todo...">
             </label>
-        </form>
+        </div>
         <div id="main">
             <div id="main__list">
-                <form id="list__todo">
+                <div id="list__todo">
                     <button></button>
                     <label for="todo__1">
                         <input id="todo__1" type="text" placeholder="todo__1...">
                     </label>
-                </form>
-            </div>
-            <div id="main__count">
-                <h4>4 items left</h4>
-                <div id="main__category__desktop">
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
                 </div>
-                <button>Clear Completed</button>
+                <div id="list__count">
+                    <h4> items left</h4>
+                    <div id="list__desktop">
+                        <button>All</button>
+                        <button>Active</button>
+                        <button>Completed</button>
+                    </div>
+                    <button>Clear Completed</button>
+                </div>
             </div>
-            <div id="main__category__mobile">
+            <div id="main__list__mobile">
                 <button>All</button>
                 <button>Active</button>
                 <button>Completed</button>
@@ -53,7 +57,7 @@
         <p>Challenging by
             <a href="#">Fronted Mentor.</a>
             Coded with lots of
-            <img src="../IMAGE/love.png" alt="heart"/>
+            <img src="../IMAGE/icon-love.jpg" alt="heart"/>
             by
             <a href="#">Mi Souto.</a>
         </p>

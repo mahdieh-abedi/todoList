@@ -23,6 +23,7 @@
 
 @mixin button {
   cursor: pointer;
+  color: inherit;
   background-color: transparent;
 }
 
@@ -54,21 +55,25 @@ body {
 
 //header
 #header {
+  display: flex;
+  flex-wrap: nowrap;
   margin: 70px 0 50px 0;
   justify-content: space-between;
-  align-items: flex-start !important;
-  @include flex_row_wrap();
+  align-items: flex-start;
   button{
     border: none;
     @include button();
-    img {
-      overflow: hidden;
+    img{
+      width: 26px;
+      height: 26px;
     }
   }
 }
+
 #day{
   display: none;
 }
+
 //create to do
 @mixin todo {
   padding: 20px;
@@ -78,6 +83,8 @@ body {
     background-color: inherit;
   }
   button {
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
     border-radius: 50%;
     border: $border-color;
@@ -90,7 +97,6 @@ body {
   box-shadow: $box-shadow;
   @include flex_row_wrap();
   @include todo();
-
 }
 
 //main
@@ -104,46 +110,56 @@ body {
 
 //list of to do     //parent
 #main__list {
-  min-height: 225px;
+  display: flex;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  min-height: 300px;
   margin-top: 25px;
-  list-style-type: none;
+  border: 1px $list-bg;
+  border-radius:10px;
   background-color: $list-bg;
-  @include flex_column();
+  box-shadow: $box-shadow;
 }
 
 #list__todo {
+  position: absolute;
   border-bottom: $border-color;
   @include todo();
   @include flex_row_wrap();
 }
 
 #list__count {
-  width: 100%;
+  bottom: 0;
   padding: 20px;
   justify-content: space-between;
+  background-color: $list-bg;
+  border: none;
+  @include flex_row_wrap();
+  button {
+    padding: 10px;
+    border: inherit;
+    @include button();
+  }
+  h4{
+    padding: 10px;
+  }
+}
+
+#list__desktop {
+  display: none;
+}
+
+#list__mobile {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 5px;
+  justify-content: center;
   box-shadow: $box-shadow;
   background-color: $list-bg;
   @include flex_row_wrap();
   button {
     padding: 10px;
-    border: none;
-    @include button();
-  }
-  #list__desktop {
-    display: none;
-  }
-}
-
-#main__list__mobile {
-  margin-top: 15px;
-  padding: 20px;
-  border-radius: 5px;
-  justify-content: space-evenly;
-  box-shadow: $box-shadow;
-  background-color: $bg-color;
-  @include flex_row_wrap();
-  button {
-    padding: 10px;
+    margin-right: 20px;
     border: none;
     @include button();
   }
@@ -151,7 +167,7 @@ body {
 
 //drag and drop sentence
 #main__drag {
-  margin: 40px auto 80px;
+  margin: 40px 0;
   justify-content: center;
   @include flex_row_wrap();
 }
@@ -159,19 +175,18 @@ body {
 
 //footer
 #footer {
-  bottom: 0;
+  position: sticky;
   padding: 10px;
-  position: fixed;
+  bottom: 0;
   text-align: center;
-  justify-content: center;
   background-color: $bg-color;
   box-shadow: 0 -5px 5px rgb(68 68 68 / 10%);
-  @include flex_row_wrap();
   p{
     img {
+      width: 12px;
+      height: 12px;
       margin: 0 5px;
-      overflow: hidden;
-      background-color: inherit;
+      background-color: transparent;
     }
   }
 }
@@ -189,15 +204,16 @@ body {
     }
   }
 
-  #list__count {
-    width: 100%;
-    padding: 20px;
-    box-shadow: $box-shadow;
-    #list__desktop {
-      display: block;
-    }
+  #list__count{
+    display: inline-flex;
   }
-  #main__list__mobile {
+
+  #list__desktop {
+    display: block;
+    background-color: $list-bg;
+  }
+
+  #list__mobile {
     display: none;
   }
 

@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../STYLE/toDoList.css">
+    <meta content=" width=device-width ,initial-scale=1" name="viewport">
+    <link href="../STYLE/toDoList.css" rel="stylesheet">
+    <script src="../JAVASCRIPT/dragAndDrop.js" type="javascript"></script>
     <title>Todo App</title>
 </head>
 <body>
@@ -15,35 +13,35 @@
         <div id="header">
             <h1>TODO</h1>
             <button>
-                <img id="night" src="../IMAGE/icon-moon.jpg" alt="night"/>
-                <img id="day" src="../IMAGE/icon-sun.jpg" alt="day"/>
+                <img alt="night" id="night" src="../IMAGE/icon-moon.png"/>
+                <img alt="day" id="day" src="../IMAGE/icon-sun.png"/>
             </button>
         </div>
         <div id="create__todo">
             <button id="todo__btn"></button>
             <label for="todo__input">
-                <input id="todo__input" type="text" placeholder="Create a new todo...">
+                <input id="todo__input" placeholder="Create a new todo..." type="text">
             </label>
         </div>
         <div id="main">
             <div id="main__list">
                 <div id="list__todo">
-                    <button></button>
+                    <button id="list__todoDrag"></button>
                     <label for="todo__1">
-                        <input id="todo__1" type="text" placeholder="todo__1...">
+                        <input id="todo__1" placeholder="dddddd" type="text">
                     </label>
                 </div>
                 <div id="list__count">
                     <h4> items left</h4>
-                    <div id="list__desktop">
+                    <span id="list__desktop">
                         <button>All</button>
                         <button>Active</button>
                         <button>Completed</button>
-                    </div>
+                    </span>
                     <button>Clear Completed</button>
                 </div>
             </div>
-            <div id="main__list__mobile">
+            <div id="list__mobile">
                 <button>All</button>
                 <button>Active</button>
                 <button>Completed</button>
@@ -57,14 +55,13 @@
         <p>Challenging by
             <a href="#">Fronted Mentor.</a>
             Coded with lots of
-            <img src="../IMAGE/icon-love.jpg" alt="heart"/>
+            <img alt="heart" src="../IMAGE/icon-love.png"/>
             by
             <a href="#">Mi Souto.</a>
         </p>
     </div>
 </div>
-<script src="../JAVASCRIPT/switchMode.js"></script>
+<!--<script src="../JAVASCRIPT/switchMode.js"></script>-->
 <!--<script src="../JAVASCRIPT/toDoFunctions.js"></script>-->
-<!--<script src="../JAVASCRIPT/dragAndDrop.js"></script>-->
 </body>
 </html>

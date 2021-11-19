@@ -7,23 +7,28 @@ $secondary-color: hsl(233, 14%, 35%);
 $hover-color: hsl(220, 98%, 61%);
 $border-color: 1px solid #C2C3D680;
 $box-shadow: 0px 35px 50px #C2C3D680;
-$switch-btn-bg: url(../IMAGE/icon-moon.jpg);
+$switch-btn-bg: url(../IMAGE/icon-moon.png);
 $primary-image: url(../IMAGE/mobile-day-background.jpg);
 $secondary-image: url(../IMAGE/desktop-day-background.jpg);
 $btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
 
-//night mode
-$bg-color: hsl(235, 21%, 11%);
-$list-bg: hsl(235, 24%, 19%);
-$exception-color:#fff;
-$primary-color: hsl(234, 11%, 52%);
-$secondary-color: hsl(233, 14%, 35%);
-$hover-color: hsl(220, 98%, 61%);
-$border-color: 1px solid hsl(237, 14%, 26%);
-$box-shadow: 0px 35px 50px #00000080;
-$switch-btn-bg: url(../IMAGE/icon-sun.jpg);
-$primary-image: url(../IMAGE/mobile-night-background.jpg);
-$secondary-image: url(../IMAGE/desktop-night-background.jpg);
-$btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+
+
+
+
+////night mode
+//$bg-color: hsl(235, 21%, 11%);
+//$list-bg: hsl(235, 24%, 19%);
+//$exception-color:#fff;
+//$primary-color: hsl(234, 11%, 52%);
+//$secondary-color: hsl(233, 14%, 35%);
+//$hover-color: hsl(220, 98%, 61%);
+//$border-color: 1px solid hsl(237, 14%, 26%);
+//$box-shadow: 0px 35px 50px #00000080;
+//$switch-btn-bg: url(../IMAGE/icon-sun.png);
+//$primary-image: url(../IMAGE/mobile-night-background.jpg);
+//$secondary-image: url(../IMAGE/desktop-night-background.jpg);
+//$btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 

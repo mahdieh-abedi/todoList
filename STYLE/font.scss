@@ -2,12 +2,14 @@
 
 @font-face {
   font-family: 'Josefin Sans', sans-serif;
-  src: url("../Font/JosefinSans-VariableFont_wght.ttf");
+  font-style: normal;
+  font-weight: 400;
+  src: url(../Font/JosefinSans-VariableFont_wght.ttf) format("ttf");
 }
 
-h1{
+h1 {
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 15px;
   color: $exception-color;
 }
@@ -17,17 +19,15 @@ h2, input {
   font-weight: 400;
 }
 
-#main__count {
+#list__count, h4 {
   font-size: 14px;
-  color: $secondary-color;
-  h4{
+  font-weight: 400;
+}
 
-  }
+#list__mobile, #list__desktop {
   button {
-    font-weight: 400;
-  }
-  #main__category__mobile {
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     color: inherit;
   }
 }
@@ -35,7 +35,6 @@ h2, input {
 p {
   font-size: 12px;
   font-weight: 400;
-  color: $exception-color;
 
   a {
     font-weight: 600;

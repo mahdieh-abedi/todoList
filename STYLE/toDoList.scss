@@ -121,7 +121,7 @@ body {
   box-shadow: $box-shadow;
 }
 
-#list__todo {
+#listTodo {
   position: absolute;
   border-bottom: $border-color;
   @include todo();

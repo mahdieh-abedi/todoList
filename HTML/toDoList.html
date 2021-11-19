@@ -1,67 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content=" width=device-width ,initial-scale=1" name="viewport">
-    <link href="../STYLE/toDoList.css" rel="stylesheet">
-    <script src="../JAVASCRIPT/dragAndDrop.js" type="javascript"></script>
-    <title>Todo App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Todo App</title>
+  <link href="../STYLE/toDoList.css" rel="stylesheet">
 </head>
 <body>
 <div id="page">
-    <div id="container">
-        <div id="header">
-            <h1>TODO</h1>
-            <button>
-                <img alt="night" id="night" src="../IMAGE/icon-moon.png"/>
-                <img alt="day" id="day" src="../IMAGE/icon-sun.png"/>
-            </button>
+  <div id="container">
+    <div id="header">
+      <h1>TODO</h1>
+      <button>
+        <img alt="night" id="night" src="../IMAGE/icon-moon.png"/>
+        <img alt="day" id="day" src="../IMAGE/icon-sun.png"/>
+      </button>
+    </div>
+    <div id="create__todo">
+      <button id="todo__btn"></button>
+      <label for="todo__input">
+        <input id="todo__input" placeholder="Create a new todo..." type="text">
+      </label>
+    </div>
+    <div id="main">
+      <div id="main__list">
+        <div id="listTodo">
+          <button id="listTodoDrag"></button>
+          <label for="todo__1">
+            <input id="todo__1" placeholder="kill me with Javascript" type="text">
+          </label>
         </div>
-        <div id="create__todo">
-            <button id="todo__btn"></button>
-            <label for="todo__input">
-                <input id="todo__input" placeholder="Create a new todo..." type="text">
-            </label>
-        </div>
-        <div id="main">
-            <div id="main__list">
-                <div id="list__todo">
-                    <button id="list__todoDrag"></button>
-                    <label for="todo__1">
-                        <input id="todo__1" placeholder="dddddd" type="text">
-                    </label>
-                </div>
-                <div id="list__count">
-                    <h4> items left</h4>
-                    <span id="list__desktop">
+        <div id="list__count">
+          <h4> items left</h4>
+          <span id="list__desktop">
                         <button>All</button>
                         <button>Active</button>
                         <button>Completed</button>
                     </span>
-                    <button>Clear Completed</button>
-                </div>
-            </div>
-            <div id="list__mobile">
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
-            </div>
-            <div id="main__drag">
-                <h2>Drag and drop to recorder list</h2>
-            </div>
+          <button>Clear Completed</button>
         </div>
+      </div>
+      <div id="list__mobile">
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
+      <div id="main__drag">
+        <h2>Drag and drop to recorder list</h2>
+      </div>
     </div>
-    <div id="footer">
-        <p>Challenging by
-            <a href="#">Fronted Mentor.</a>
-            Coded with lots of
-            <img alt="heart" src="../IMAGE/icon-love.png"/>
-            by
-            <a href="#">Mi Souto.</a>
-        </p>
-    </div>
+  </div>
+  <div id="footer">
+    <p>Challenging by
+      <a href="#">Fronted Mentor.</a>
+      Coded with lots of
+      <img alt="heart" src="../IMAGE/icon-love.png"/>
+      by
+      <a href="#">Mi Souto.</a>
+    </p>
+  </div>
 </div>
-<!--<script src="../JAVASCRIPT/switchMode.js"></script>-->
-<!--<script src="../JAVASCRIPT/toDoFunctions.js"></script>-->
+<script src="../JAVASCRIPT/dragAndDrop.js"></script>
 </body>
 </html>

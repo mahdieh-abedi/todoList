@@ -1,5 +1,6 @@
-@import "font";
-@import "variables";
+@import "font-size-color";
+@import "day-theme.css";
+@import "night-theme.css";
 
 //general
 * {
@@ -23,15 +24,13 @@
 
 @mixin button {
   cursor: pointer;
-  color: inherit;
   background-color: transparent;
 }
 
 
 //whole page
 body {
-  color: $primary-color;
-  background-color: $bg-color;
+  background-color: var(--bg-color);
 }
 
 #page {
@@ -39,17 +38,19 @@ body {
   min-height: 100vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-image: $primary-image;
-  div{
+  background-image: var(--primary-image);
+
+  div {
     max-width: 100%;
   }
 }
 
 #container {
-  @include flex_column();
-  div{
+  div {
     width: 90%;
   }
+
+  @include flex_column();
 }
 
 
@@ -57,44 +58,47 @@ body {
 #header {
   display: flex;
   flex-wrap: nowrap;
-  margin: 70px 0 50px 0;
-  justify-content: space-between;
   align-items: flex-start;
-  button{
+  justify-content: space-between;
+  margin: 70px 0 50px 0;
+
+  button {
+    width: 26px;
+    height: 26px;
     border: none;
+    cursor: pointer;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: var(--switch-btn-bg);
     @include button();
-    img{
-      width: 26px;
-      height: 26px;
-    }
   }
 }
 
-#day{
-  display: none;
-}
 
 //create to do
 @mixin todo {
   padding: 20px;
-  background-color: $list-bg;
+  background-color: var(--list-bg);
   input {
     border: none;
-    background-color: inherit;
+    background-color: var(--list-bg);
+    &:focus{
+      border: none;
+    }
   }
   button {
     width: 24px;
     height: 24px;
     margin-right: 10px;
     border-radius: 50%;
-    border: $border-color;
-    @include button();
+    border: var(--border-color);
+    background-color: var(--list-bg);
   }
 }
 
 #create__todo {
   border-radius: 5px;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
   @include flex_row_wrap();
   @include todo();
 }
@@ -102,51 +106,123 @@ body {
 //main
 #main {
   justify-content: center;
-  @include flex_column();
-  div{
+
+  div {
     width: 100%;
   }
+
+  @include flex_column();
 }
 
 //list of to do     //parent
 #main__list {
-  display: flex;
-  align-content: flex-end;
-  flex-wrap: wrap;
   min-height: 300px;
   margin-top: 25px;
-  border: 1px $list-bg;
-  border-radius:10px;
-  background-color: $list-bg;
-  box-shadow: $box-shadow;
+  border-radius: 10px;
+  justify-content: space-between;
+  border: 1px var(--list-bg);
+  background-color: var(--list-bg);
+  box-shadow: var(--box-shadow);
+  @include flex_column
 }
 
 #list__todo {
-  position: absolute;
-  border-bottom: $border-color;
+  cursor: grab;
+  border-bottom: var(--border-color);
+
+  &:hover {
+    button {
+      border-color: var(--btn-hover-border);
+    }
+
+    #delete__btn {
+      display: block;
+      border: none;
+    }
+  }
+
+  div {
+    color: var(--list-color);
+    button{
+      img{
+        display: none;
+        width: 15px;
+        height:15px;
+      }
+    }
+    @include flex_row_wrap;
+  }
+
   @include todo();
   @include flex_row_wrap();
 }
 
-#list__count {
-  bottom: 0;
-  padding: 20px;
-  justify-content: space-between;
-  background-color: $list-bg;
+.remove {
+  display: none;
+}
+
+.true {
+  button {
+    background:var(--btn-bg);
+    img{
+      display: block;
+      background-color: transparent;
+    }
+  }
+
+  span {
+    color: var(--complete-color);
+    text-decoration: line-through;
+
+  }
+}
+
+#delete__btn {
+  width: 25px;
+  height: 25px;
+  display: none;
   border: none;
-  @include flex_row_wrap();
+  cursor: pointer;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-image: var(--delete-btn);
+}
+
+#list__count {
+  padding: 20px;
+  border: none;
+  justify-content: space-between;
+  background-color: var(--list-bg);
+
   button {
     padding: 10px;
     border: inherit;
     @include button();
+
+    &:hover {
+      color: var(--hover-color);
+    }
   }
-  h4{
+
+  h4 {
     padding: 10px;
   }
+
+  @include flex_row_wrap();
 }
 
 #list__desktop {
   display: none;
+
+  button {
+    &:hover {
+      color: var(--hover-color);
+    }
+
+    &:focus {
+      color: var(--checked-color);
+    }
+  }
 }
 
 #list__mobile {
@@ -154,15 +230,27 @@ body {
   padding: 20px;
   border-radius: 5px;
   justify-content: center;
-  box-shadow: $box-shadow;
-  background-color: $list-bg;
-  @include flex_row_wrap();
+  box-shadow: var(--box-shadow);
+  color: var(--secondary-color);
+  background-color: var(--list-bg);
+
   button {
     padding: 10px;
     margin-right: 20px;
     border: none;
+
+    &:hover {
+      color: var(--hover-color)
+    }
+
+    &:focus {
+      color: var(--checked-color);
+    }
+
     @include button();
   }
+
+  @include flex_row_wrap();
 }
 
 //drag and drop sentence
@@ -175,13 +263,14 @@ body {
 
 //footer
 #footer {
-  position: sticky;
   padding: 10px;
   bottom: 0;
+  position: sticky;
   text-align: center;
-  background-color: $bg-color;
+  background-color: var(--bg-color);
   box-shadow: 0 -5px 5px rgb(68 68 68 / 10%);
-  p{
+
+  p {
     img {
       width: 12px;
       height: 12px;
@@ -195,22 +284,22 @@ body {
 //desktop
 @media screen and (min-width: 580px) {
   #page {
-    background-image: $secondary-image;
+    background-image: var(--secondary-image);
   }
 
-  #container{
-    div{
+  #container {
+    div {
       max-width: 540px;
     }
   }
 
-  #list__count{
+  #list__count {
     display: inline-flex;
   }
 
   #list__desktop {
     display: block;
-    background-color: $list-bg;
+    background-color: var(--list-bg);
   }
 
   #list__mobile {
@@ -218,3 +307,4 @@ body {
   }
 
 }
+

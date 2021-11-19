@@ -1,37 +1,58 @@
+@import "day-theme.css";
+@import "night-theme.css";
 @font-face {
   font-family: "Josefin Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   src: url(../Font/JosefinSans-VariableFont_wght.ttf) format("ttf");
 }
-h1 {
+#header__title {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 15px;
-  color: #fff;
+  color: #ffffff;
 }
 
-h2, input {
+#todo__input {
   font-size: 18px;
   font-weight: 400;
+  color: var(--secondary-color);
 }
 
-#list__count, h4 {
+button {
+  color: var(--primary-color);
+}
+
+#todo__description {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--list-color);
+}
+
+#count__active {
   font-size: 14px;
   font-weight: 400;
+  color: var(--primary-color);
 }
 
 #list__mobile button, #list__desktop button {
   font-size: 14px;
   font-weight: 600;
-  color: inherit;
+  color: var(--secondary-color);
 }
 
-p {
+#drag__title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+#footer p {
   font-size: 12px;
   font-weight: 400;
+  color: var(--list-color);
 }
-p a {
+#footer p a {
   font-weight: 600;
   color: #3a7bfd;
   text-decoration: underline;
@@ -45,8 +66,7 @@ p a {
 }
 
 body {
-  color: #777a92;
-  background-color: #fff;
+  background-color: var(--bg-color);
 }
 
 #page {
@@ -54,7 +74,7 @@ body {
   min-height: 100vh;
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-image: url(../IMAGE/mobile-day-background.jpg);
+  background-image: var(--primary-image);
 }
 #page div {
   max-width: 100%;
@@ -72,47 +92,45 @@ body {
 #header {
   display: flex;
   flex-wrap: nowrap;
-  margin: 70px 0 50px 0;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
+  margin: 70px 0 50px 0;
 }
 #header button {
-  border: none;
-  cursor: pointer;
-  color: inherit;
-  background-color: transparent;
-}
-#header button img {
   width: 26px;
   height: 26px;
-}
-
-#day {
-  display: none;
+  border: none;
+  cursor: pointer;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-image: var(--switch-btn-bg);
+  cursor: pointer;
+  background-color: transparent;
 }
 
 #create__todo {
   border-radius: 5px;
-  box-shadow: 0px 35px 50px #C2C3D680;
+  box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--list-bg);
 }
 #create__todo input {
   border: none;
-  background-color: inherit;
+  background-color: var(--list-bg);
+}
+#create__todo input:focus {
+  border: none;
 }
 #create__todo button {
   width: 24px;
   height: 24px;
   margin-right: 10px;
   border-radius: 50%;
-  border: 1px solid #C2C3D680;
-  cursor: pointer;
-  color: inherit;
-  background-color: transparent;
+  border: var(--border-color);
+  background-color: var(--list-bg);
 }
 
 #main {
@@ -126,47 +144,93 @@ body {
 }
 
 #main__list {
-  display: flex;
-  align-content: flex-end;
-  flex-wrap: wrap;
   min-height: 300px;
   margin-top: 25px;
-  border: 1px #fff;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0px 35px 50px #C2C3D680;
+  justify-content: space-between;
+  border: 1px var(--list-bg);
+  background-color: var(--list-bg);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #list__todo {
-  position: absolute;
-  border-bottom: 1px solid #C2C3D680;
+  cursor: grab;
+  border-bottom: var(--border-color);
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--list-bg);
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+#list__todo:hover button {
+  border-color: var(--btn-hover-border);
+}
+#list__todo:hover #delete__btn {
+  display: block;
+  border: none;
+}
+#list__todo div {
+  color: var(--list-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#list__todo div button img {
+  display: none;
+  width: 15px;
+  height: 15px;
+}
 #list__todo input {
   border: none;
-  background-color: inherit;
+  background-color: var(--list-bg);
+}
+#list__todo input:focus {
+  border: none;
 }
 #list__todo button {
   width: 24px;
   height: 24px;
   margin-right: 10px;
   border-radius: 50%;
-  border: 1px solid #C2C3D680;
-  cursor: pointer;
-  color: inherit;
+  border: var(--border-color);
+  background-color: var(--list-bg);
+}
+
+.remove {
+  display: none;
+}
+
+.true button {
+  background: var(--btn-bg);
+}
+.true button img {
+  display: block;
   background-color: transparent;
+}
+.true span {
+  color: var(--complete-color);
+  text-decoration: line-through;
+}
+
+#delete__btn {
+  width: 25px;
+  height: 25px;
+  display: none;
+  border: none;
+  cursor: pointer;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-image: var(--delete-btn);
 }
 
 #list__count {
-  bottom: 0;
   padding: 20px;
-  justify-content: space-between;
-  background-color: #fff;
   border: none;
+  justify-content: space-between;
+  background-color: var(--list-bg);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -175,8 +239,10 @@ body {
   padding: 10px;
   border: inherit;
   cursor: pointer;
-  color: inherit;
   background-color: transparent;
+}
+#list__count button:hover {
+  color: var(--hover-color);
 }
 #list__count h4 {
   padding: 10px;
@@ -185,14 +251,21 @@ body {
 #list__desktop {
   display: none;
 }
+#list__desktop button:hover {
+  color: var(--hover-color);
+}
+#list__desktop button:focus {
+  color: var(--checked-color);
+}
 
 #list__mobile {
   margin-top: 15px;
   padding: 20px;
   border-radius: 5px;
   justify-content: center;
-  box-shadow: 0px 35px 50px #C2C3D680;
-  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: var(--secondary-color);
+  background-color: var(--list-bg);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -202,8 +275,13 @@ body {
   margin-right: 20px;
   border: none;
   cursor: pointer;
-  color: inherit;
   background-color: transparent;
+}
+#list__mobile button:hover {
+  color: var(--hover-color);
+}
+#list__mobile button:focus {
+  color: var(--checked-color);
 }
 
 #main__drag {
@@ -215,11 +293,11 @@ body {
 }
 
 #footer {
-  position: sticky;
   padding: 10px;
   bottom: 0;
+  position: sticky;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--bg-color);
   box-shadow: 0 -5px 5px rgba(68, 68, 68, 0.1);
 }
 #footer p img {
@@ -231,7 +309,7 @@ body {
 
 @media screen and (min-width: 580px) {
   #page {
-    background-image: url(../IMAGE/desktop-day-background.jpg);
+    background-image: var(--secondary-image);
   }
 
   #container div {
@@ -244,7 +322,7 @@ body {
 
   #list__desktop {
     display: block;
-    background-color: #fff;
+    background-color: var(--list-bg);
   }
 
   #list__mobile {

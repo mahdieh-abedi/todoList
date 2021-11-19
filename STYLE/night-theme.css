@@ -1,0 +1,18 @@
+.dark-mode{
+    --bg-color: hsl(235, 21%, 11%);
+    --list-bg: hsl(235, 24%, 19%);
+    --primary-color: hsl(234, 11%, 52%);
+    --secondary-color:hsl(234, 11%, 52%);
+    --list-color:#cacde8;
+    --hover-color: #cacde8;
+    --complete-color:#4d5066;
+    --checked-color:hsl(220, 98%, 61%);
+    --border-color: 1px solid hsl(237, 14%, 26%);
+    --box-shadow: 0px 35px 50px #00000080;
+    --switch-btn-bg: url(../IMAGE/icon-sun.png);
+    --primary-image: url(../IMAGE/mobile-night-background.jpg);
+    --secondary-image: url(../IMAGE/desktop-night-background.jpg);
+    --delete-btn:url(../IMAGE/icon-delet-day.png);
+    --btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --btn-hover-border:hsl(192, 100%, 67%) hsl(192, 100%, 67%) hsl(280, 87%, 65%) hsl(280, 87%, 65%);
+}

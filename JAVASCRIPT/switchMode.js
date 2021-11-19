@@ -1,6 +1,4 @@
-// function switchMode(){
-//     const mode = document.body;
-//     mode.classList.toggle("dark-mode");
-// }
-//
-//
+document.getElementById("switchBtn").addEventListener('click', function() {
+   document.body.classList.toggle('dark-mode');
+});
+

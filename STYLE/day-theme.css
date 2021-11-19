@@ -1,0 +1,17 @@
+:root{
+    --bg-color: #fff;
+    --list-bg: #fff;
+    --primary-color: hsl(234, 11%, 52%);
+    --secondary-color: #61657e;
+    --list-color: hsl(234, 11%, 52%);
+    --hover-color: #30303d;
+    --complete-color:#cacde8;
+    --checked-color:hsl(220, 98%, 61%);
+    --border-color: 1px solid #C2C3D680;
+    --box-shadow: 0px 35px 50px #C2C3D680;
+    --switch-btn-bg: url(../IMAGE/icon-moon.png);
+    --primary-image: url(../IMAGE/mobile-day-background.jpg);
+    --secondary-image: url(../IMAGE/desktop-day-background.jpg);
+    --delete-btn:url(../IMAGE/icon-delet-day.png);
+    --btn-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --btn-hover-border:hsl(192, 100%, 67%) hsl(192, 100%, 67%) hsl(280, 87%, 65%) hsl(280, 87%, 65%);}
